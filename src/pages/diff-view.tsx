@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { GitCompare, ChevronLeft, ArrowRightLeft, Palette, Type, Layers, Copy, Check } from 'lucide-react'
+import { GitCompare, ChevronLeft, Palette, Type, Copy, Check } from 'lucide-react'
 import { PROMPTS_DATA } from '@/data/prompts'
-import type { LibraryPrompt } from '@/types'
 import { toast } from 'sonner'
 
 export function DiffView() {

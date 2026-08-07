@@ -1,13 +1,11 @@
 import React, { useState, useMemo } from 'react'
-import { 
-  Search, 
-  Sparkles, 
-  Grid3X3, 
-  Grid2X2, 
-  Bookmark, 
+import {
+  Search,
+  Sparkles,
+  Grid3X3,
+  Grid2X2,
+  Bookmark,
   RotateCcw,
-  Wand2,
-  SlidersHorizontal,
   Flame
 } from 'lucide-react'
 import { PROMPTS_DATA } from '@/data/prompts'

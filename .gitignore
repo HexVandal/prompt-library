@@ -27,3 +27,15 @@ dist-ssr
 .env
 .env.local
 .env*.local
+
+# Agent skill packs (managed by tooling, not project source)
+.agents/
+.claude/
+.windsurf/
+skills-lock.json
+
+# Prompt ingestion pipeline (raw sources compiled into src/data/prompts.ts)
+free_prompts/
+download_prompts.py
+merge_prompts.py
+prompts.txt

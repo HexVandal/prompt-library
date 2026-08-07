@@ -6,9 +6,7 @@ import {
   BarChart3,
   Download,
   ExternalLink,
-  FolderDown,
-  Search,
-  Bookmark
+  FolderDown
 } from 'lucide-react'
 
 export function Layout() {

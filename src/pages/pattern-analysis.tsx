@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react'
-import { Palette, Type, Box, Zap, BarChart3, TrendingUp, Layers, Sparkles } from 'lucide-react'
+import { Palette, Type, Box, BarChart3, Layers } from 'lucide-react'
 import { PROMPTS_DATA } from '@/data/prompts'
 
 export function PatternAnalysis() {

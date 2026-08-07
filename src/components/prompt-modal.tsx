@@ -1,16 +1,13 @@
-import React, { useState } from 'react'
-import { 
-  X, 
-  Copy, 
-  Check, 
-  Play, 
-  Sparkles, 
-  Code2, 
-  Palette, 
-  Layers, 
-  Type, 
-  Wand2,
-  ExternalLink,
+import { useState, useEffect } from 'react'
+import {
+  X,
+  Copy,
+  Check,
+  Sparkles,
+  Code2,
+  Palette,
+  Layers,
+  Type,
   Bookmark
 } from 'lucide-react'
 import type { LibraryPrompt } from '@/types'
@@ -24,11 +21,24 @@ interface PromptModalProps {
 }
 
 export function PromptModal({ prompt, onClose, isBookmarked, onToggleBookmark }: PromptModalProps) {
-  if (!prompt) return null
-
   const [copied, setCopied] = useState(false)
   const [copiedColor, setCopiedColor] = useState<string | null>(null)
   const [activeTab, setActiveTab] = useState<'prompt' | 'tokens' | 'components'>('prompt')
+
+  useEffect(() => {
+    if (!prompt) return
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose()
+    }
+    document.addEventListener('keydown', handleKeyDown)
+    document.body.style.overflow = 'hidden'
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown)
+      document.body.style.overflow = ''
+    }
+  }, [prompt, onClose])
+
+  if (!prompt) return null
 
   const handleCopyPrompt = () => {
     navigator.clipboard.writeText(prompt.content)
